@@ -21,7 +21,7 @@ class ContentList {
 
   getContentHTML(index: number): string {
     if (index < 0 || index >= this.contents.length) {
-      return `<div><p>Invalid index ${index}. Please provide a valid index.</p></div>`;
+      return `<div><p>Invalid index ${index}. This index is outside of the array's range.</p></div>`;
     }
 
     const content = this.contents[index];
