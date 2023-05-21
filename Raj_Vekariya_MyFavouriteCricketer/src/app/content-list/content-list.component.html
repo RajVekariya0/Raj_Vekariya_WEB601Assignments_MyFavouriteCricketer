@@ -1,0 +1,32 @@
+<!-- <div>
+    <div *ngFor="let content of contentItems; let isFirst = first" class="content-card" [ngClass]="{ 'first-card': isFirst }">
+      <div class="card-header">
+        <h2>{{ content.title }}</h2>
+      </div>
+      <div class="card-body">
+        <img src="{{ content.image }}" (click)="showContentDetails(content)" alt="Content Image">
+        <p>{{ content.description }}</p>
+        <p>Creator: {{ content.creator }}</p>
+        <p>Type: {{ content.type }}</p>
+        <p>Tags: {{ content.tags.join(', ') }}</p>
+      </div>
+    </div>
+  </div>
+   -->
+
+   <p>Here's cricketers content list !!</p>
+
+
+<div *ngFor="let contentItem of contentItemsArray; let isFirst = first"
+     [style.border]="isFirst ? '2px solid black' : '1px solid black'"
+     [style.padding]="'10px'"
+     [style.margin]="'10px'">
+  <h2>{{ contentItem.title }}</h2>
+  <img *ngIf="contentItem.image" [src]="contentItem.image" (click)="showContentDetails(contentItem)" >
+  <p>{{ contentItem.description }}</p>
+  <p>{{ contentItem.creator }}</p>
+  <p *ngIf="contentItem.type">{{ contentItem.type }}</p>
+  <ul *ngIf="contentItem.tags">
+    <li *ngFor="let tag of contentItem.tags">{{ tag }}</li>
+  </ul>
+</div>

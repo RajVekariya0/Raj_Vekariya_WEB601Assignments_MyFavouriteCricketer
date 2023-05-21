@@ -1,11 +1,8 @@
-<h1>Favourite Cricketer List</h1>
-
-  <div *ngFor="let content of contentList.contentArray; let i=index">
-    <ng-container *ngIf="i < contentList.contentArray.length">
-      <div [innerHTML]="contentList.getContentHTML(content.id - 1)"></div>
-    </ng-container>
-    <ng-container *ngIf="i >= contentList.contentArray.length">
-      <div>Index out of range.</div>
-    </ng-container>
+<div class="content-card">
+  <h1>Content List</h1>
+  <div class="content-list">
+    <div *ngFor="let contentItem of contentList.content; let i = index">  
+      <div [innerHTML]="contentList.getContentHtml(i)"></div>
+    </div>
   </div>
-  
+</div>
