@@ -31,7 +31,6 @@ export class ContentListComponent {
       image: 'assets/image/firstball.webp',
       description: 'the name of the first delivery of any innings in a cricket match from the bowler to the batsman,',
       creator: 'Redleaf Hill in Penshurst, Kent. In 1775,',
-      type: 'Hard wood',
       tags: ['Tag3', 'Tag4']
     },
     {
@@ -40,7 +39,7 @@ export class ContentListComponent {
       image: 'assets/image/stump.jpeg',
       description: 'the ICC wasted no time in introducing them to the international stage as well ',
       creator: 'ICC introduceL',
-      type: 'expensive stumps',
+      
       tags: ['$40,000', '$50,000']
     },
     {
@@ -58,9 +57,28 @@ export class ContentListComponent {
       image: 'assets/image/hardik.jpeg',
       description: 'current vice-captain of the Indian cricket team ',
       creator: 'vadodara',
-      type: 'all rounder',
+      type: 'best man',
+      tags: ['Gujju', 'rock']
+    },
+    {
+      id: 7,
+      title: 'Jasprit Bumrah',
+      image: 'assets/image/bumrah.jpg',
+      description: 'Jasprit Jasbirsingh Bumrah is an Indian international cricketer',
+      creator: 'by self',
+      type: 'bowler',
+      tags: ['Gujju', 'rock']
+    },
+    {
+      id: 7,
+      title: 'Bhuvneshwar Kumar',
+      image: 'assets/image/Bhuvneshwar.jpeg',
+      description: 'One of the simplest new ball bowlers within the world currently',
+      creator: 'by self',
+      type: 'bowler',
       tags: ['Gujju', 'rock']
     }
+    
   ];
 
   showContentDetails(content: any) {
