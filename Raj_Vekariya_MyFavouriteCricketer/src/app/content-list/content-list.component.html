@@ -16,17 +16,42 @@
 
    <p>Here's cricketers content list !!</p>
 
+   <!-- <div *ngFor="let contentItem of contentItemsArray; let isFirst = first"
+        [style.border]="isFirst ? '2px solid black' : '1px solid black'"
+        [style.padding]="'10px'"
+        [style.margin]="'10px'">
+     <h2>{{ contentItem.title }}</h2>
+     <img *ngIf="contentItem.imgURL" [src]="contentItem.imgURL" (click)="showContentDetails(contentItem)" >
+     <p>{{ contentItem.description }}</p>
+     <p>{{ contentItem.creator }}</p>
+     <p *ngIf="contentItem.type">{{ contentItem.type }}</p>
+     <ul *ngIf="contentItem.tags">
+       <li *ngFor="let tag of contentItem.tags">{{ tag }}</li>
+     </ul>
+   </div> -->
 
-<div *ngFor="let contentItem of contentItemsArray; let isFirst = first"
-     [style.border]="isFirst ? '2px solid black' : '1px solid black'"
-     [style.padding]="'10px'"
-     [style.margin]="'10px'">
-  <h2>{{ contentItem.title }}</h2>
-  <img *ngIf="contentItem.image" [src]="contentItem.image" (click)="showContentDetails(contentItem)" >
-  <p>{{ contentItem.description }}</p>
-  <p>{{ contentItem.creator }}</p>
-  <p *ngIf="contentItem.type">{{ contentItem.type }}</p>
-  <ul *ngIf="contentItem.tags">
-    <li *ngFor="let tag of contentItem.tags">{{ tag }}</li>
-  </ul>
+
+<h1 style="background-color: rgba(158, 203, 100, 0.755);">Cricketers </h1>
+<div id="filter">
+<input [(ngModel)]="findTitle"><button (click)="findContent()">Search</button>
+<br>
+<h1>{{message}}</h1>
 </div>
+<div id="none">
+<h1>No Type</h1>
+<app-content-card class="none" *ngFor="let item of (contentItemsArray | contentClear :'' )" [content]="item"  [ngClass]="{'highlight': item.title === findTitle && filterResult}" >
+</app-content-card>
+</div>
+
+<div id ="Allrounder" >
+<h1>All rounder Type</h1>
+<app-content-card  *ngFor="let item of (contentItemsArray | contentClear :'All rounder' )" [content]="item" [ngClass]="{'highlight': item.title.toLowerCase() === findTitle.toLowerCase() && filterResult}" >
+</app-content-card>
+</div>
+
+<div id ="Bowler">
+<h1>Bowler Type</h1>
+<app-content-card  *ngFor="let item of (contentItemsArray | contentClear :'Bowler' )" [content]="item" [ngClass]="{'highlight': item.title === findTitle && filterResult}">
+</app-content-card>
+</div>
+

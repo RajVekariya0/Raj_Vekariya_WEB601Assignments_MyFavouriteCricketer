@@ -1,15 +1,17 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Input, Pipe, PipeTransform } from '@angular/core';
+import { Content } from './helper-files/ content-interface';
+
 
 @Pipe({
   name: 'contentClear'
 })
 export class ContentClearPipe implements PipeTransform  {
 
-  transform(contentList: any[], type: string = ''): any[] {
-    if (type === '') {
-      return contentList;
-    } else {
-      return contentList.filter(item => item.type === type);
-    }
+  transform(contentItemsArray: Content[], type: string) {
+    
+    return  contentItemsArray.filter(c => c.type === type ) ;
+ 
 }
+  
 }
+

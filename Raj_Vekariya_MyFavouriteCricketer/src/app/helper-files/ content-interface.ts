@@ -1,4 +1,4 @@
-export interface ContentList {
+export interface Content {
     id: number;
     title: string;
     description: string;
@@ -7,4 +7,3 @@ export interface ContentList {
     type?: string;
     tags?: string[];
   }
-  
