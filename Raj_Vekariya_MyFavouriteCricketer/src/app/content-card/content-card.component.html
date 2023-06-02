@@ -1,7 +1,7 @@
 
 <div class="contentItemsArray" *ngIf ="content.type ==='All rounder' || content.type === 'Bowler' || content.type ===''"  [ngStyle]="{'margin': '30px'  }">
 
-  <div>
+  <div class="content">
           <h2>{{content.title}}</h2>
           <p>{{content.description}}</p>
           <p>Creator: {{content.creator}}</p>
@@ -10,3 +10,4 @@
           <p *ngIf="content.tags && content.tags.length > 0"> Tag: {{content.tags}}</p>
   </div>
   </div>
+  
