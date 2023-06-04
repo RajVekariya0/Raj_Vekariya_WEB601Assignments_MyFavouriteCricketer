@@ -1,13 +1,38 @@
 
-<div class="contentItemsArray" *ngIf ="content.type ==='All rounder' || content.type === 'Bowler' || content.type ===''"  [ngStyle]="{'margin': '30px'  }">
+<!-- <div class="contentItemsArray" *ngIf ="content.type ==='All rounder' || content.type === 'Bowler' || content.type ===''"  [ngStyle]="{'margin': '30px'  }">
 
   <div class="content">
-          <h2>{{content.title}}</h2>
+          <h2 appHoverAffect>{{content.title}}</h2>
           <p>{{content.description}}</p>
           <p>Creator: {{content.creator}}</p>
-          <img  *ngIf="content.imgURL" (click)="clickEvent()" src='{{content.imgURL}}'>
-          <p *ngIf="content.type" > Type: {{content.type}}</p>
-          <p *ngIf="content.tags && content.tags.length > 0"> Tag: {{content.tags}}</p>
+          <img  *ngIf="content.imgURL; else defaultImage" (click)="clickEvent()" src='{{content.imgURL}}'>
+          <ng-template #defaultImage>
+                <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg" alt="Default Image">
+              </ng-template>
+            
+          <p appHoverAffect *ngIf="content.type">Type: {{content.type}}</p>
+
+          <p *ngIf="content.tags && content.tags.length > 0"> Tag:  {{content.tags}}</p>
+          
   </div>
-  </div>
+  </div> -->
   
+  <div class="contentItemsArray" *ngIf="content.type === 'All rounder' || content.type === 'Bowler' || content.type === ''" [ngStyle]="{'margin': '30px'}">
+
+        <div class="content">
+          <h2 >{{content.title}}</h2>
+          <p>{{content.description}}</p>
+          <p>Creator: {{content.creator}}</p>
+          <img *ngIf="content.imgURL; else defaultImage" (click)="clickEvent()" src='{{content.imgURL}}'>
+          <ng-template #defaultImage>
+            <img src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg" alt="Default Image">
+          </ng-template>
+      
+          <p class="typeHover" appHoverAffect *ngIf="content.type">Type: {{content.type}}</p>
+      
+          <p class="tagHover" *ngIf="content.tags && content.tags.length > 0"> Tag: {{content.tags}}</p>
+      
+        </div>
+      </div>
+      
+      

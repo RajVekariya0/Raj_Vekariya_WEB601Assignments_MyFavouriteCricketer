@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HoverAffectDirective } from 'src/hover-affect.directive';
+
 
 
 import { AppComponent } from './app.component';
@@ -15,7 +17,9 @@ import { ContentCardComponent } from './content-card/content-card.component';
     AppComponent,
     ContentCardComponent,
     ContentListComponent,
-    ContentClearPipe // Add this line
+    ContentClearPipe, // Add this line
+    HoverAffectDirective
+
   ],
   imports: [
     BrowserModule,

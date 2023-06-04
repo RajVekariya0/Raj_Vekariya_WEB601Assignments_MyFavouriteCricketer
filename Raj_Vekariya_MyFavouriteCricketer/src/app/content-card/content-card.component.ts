@@ -15,7 +15,7 @@ export class ContentCardComponent implements OnInit{
       console.log(this.content.id, this.content.title)
   }
  @Input() content : Content;
- @Input() first: boolean
- 
+ @Input() first: boolean;
+
  
 }

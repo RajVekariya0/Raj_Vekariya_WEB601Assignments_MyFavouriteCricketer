@@ -35,7 +35,7 @@ export class ContentListComponent implements OnInit {
     {
       id: 3,
       title: 'Bowler',
-      imgURL: 'assets/image/firstball.webp',
+      imgURL: '',
       description: 'the name of the first delivery of any innings in a cricket match from the bowler to the batsman,',
       creator: 'Redleaf Hill in Penshurst, Kent. In 1775,',
       type: '',

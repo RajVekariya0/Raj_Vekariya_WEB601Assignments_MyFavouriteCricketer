@@ -16,3 +16,23 @@
 .first-item{
   border: 5px solid #240c0c;
 }
+.content .tagHover:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.content .typeHover:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+
+.content.firstCard .tagHover:hover {
+  border-bottom: 1px solid red;
+}
+
+.content.lastCard .tagHover:hover {
+  border-top: 1px solid red;
+}
+
