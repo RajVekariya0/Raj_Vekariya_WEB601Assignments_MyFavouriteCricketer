@@ -5,7 +5,7 @@ import {Content} from '../helper-files/ content-interface';
 
 @Component({
   selector: 'app-content-card',
-  templateUrl: './content-card.component.html',
+  templateUrl:'./content-card.component.html',
   styleUrls: ['./content-card.component.scss']
 })
 export class ContentCardComponent implements OnInit{
@@ -16,6 +16,9 @@ export class ContentCardComponent implements OnInit{
   }
  @Input() content : Content;
  @Input() first: boolean;
+ @Input() isFirstCard: boolean = false;
+ @Input() isLastCard: boolean = false;
+
 
  
 }

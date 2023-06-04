@@ -30,9 +30,11 @@
       
           <p class="typeHover" appHoverAffect *ngIf="content.type">Type: {{content.type}}</p>
       
-          <p class="tagHover" *ngIf="content.tags && content.tags.length > 0"> Tag: {{content.tags}}</p>
+          <p appHoverAffect [ngClass]="{'tagHover': !isFirstCard && !isLastCard, 'firstCardTag': isFirstCard, 'lastCardTag': isLastCard}" *ngIf="content.tags && content.tags.length > 0"> Tag: {{content.tags}}</p>
       
         </div>
       </div>
+
       
       
+

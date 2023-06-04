@@ -26,13 +26,16 @@
   cursor: pointer;
 }
 
-
-
-.content.firstCard .tagHover:hover {
-  border-bottom: 1px solid red;
+.tagHover:hover {
+  border: 3px solid rgb(175, 234, 127);
+  margin: 30px;
 }
 
-.content.lastCard .tagHover:hover {
-  border-top: 1px solid red;
+.firstCardTag {
+  border-top: none;
 }
+
+
+
+
 
