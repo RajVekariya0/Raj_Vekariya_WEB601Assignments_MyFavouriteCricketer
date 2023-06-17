@@ -8,6 +8,7 @@ import { Content} from '../helper-files/ content-interface';
   styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent implements OnInit {
+[x: string]: any;
 
   findTitle : string ='';
   filterResult: boolean = false;
@@ -96,6 +97,7 @@ export class ContentListComponent implements OnInit {
     console.log('ID:', content.id);
     console.log('Title:', content.title);
   } */
+  
   findContent() {
     this.filterResult = this.contentItemsArray.some(content => content.title.toLowerCase() === this.findTitle.toLowerCase());
   
@@ -108,6 +110,13 @@ export class ContentListComponent implements OnInit {
   ngOnInit(){
   
   }
+  addContent(newContent: Content) {
+    this.contentItemsArray.push(newContent);
+    this.contentItemsArray = [...this.contentItemsArray]; // Clone the array for pipe updates
+  }
+
+  
+  }
   
   
-}
+

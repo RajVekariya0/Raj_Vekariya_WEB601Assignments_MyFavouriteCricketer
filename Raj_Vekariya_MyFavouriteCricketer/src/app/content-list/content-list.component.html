@@ -29,8 +29,10 @@
        <li *ngFor="let tag of contentItem.tags">{{ tag }}</li>
      </ul>
    </div> -->
+   <app-create-content (createContentEvent)="addContent($event)"></app-create-content>
 
-
+   <!-- Rest of the content list rendering -->
+   
 <h1 style="background-color: rgba(158, 203, 100, 0.755);">Here's cricketers content list !! </h1>
 <div id="filter">
 <input [(ngModel)]="findTitle"><button (click)="findContent()">Search</button>
@@ -56,5 +58,14 @@
 <h1>Bowler Type</h1>
 <app-content-card  *ngFor="let item of (contentItemsArray | contentClear :'Bowler' )" [content]="item" [ngClass]="{'highlight': item.title === findTitle && filterResult}">
 </app-content-card>
+</div>
+
+
+<div *ngFor="let contentItem of contentItemsArray.slice(-1)" style="text-align: center; border: 5px solid #240c0c;">
+  <h1>{{contentItem.id}}</h1>
+  <h2>{{ contentItem.title }}</h2>
+  <h2>{{ contentItem.description }}</h2>
+  <h2>{{ contentItem.creator }}</h2>
+
 </div>
 
