@@ -10,6 +10,7 @@ import { ContentListComponent } from './content-list/content-list.component';
 import { ContentClearPipe } from './content-clear.pipe'; // Add this line
 import { FormsModule } from '@angular/forms';
 import { ContentCardComponent } from './content-card/content-card.component';
+import { CreateContentComponent } from './create-content/create-content.component';
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import { ContentCardComponent } from './content-card/content-card.component';
     ContentCardComponent,
     ContentListComponent,
     ContentClearPipe, // Add this line
-    HoverAffectDirective
+    HoverAffectDirective, CreateContentComponent
 
   ],
   imports: [
