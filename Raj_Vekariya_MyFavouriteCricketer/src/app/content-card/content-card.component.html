@@ -17,7 +17,7 @@
   </div>
   </div> -->
   
-  <div class="contentItemsArray" *ngIf="content.type === 'All rounder' || content.type === 'Bowler' || content.type === ''" [ngStyle]="{'margin': '30px'}">
+ <!--  <div class="contentItemsArray" *ngIf="content.type === 'All rounder' || content.type === 'Bowler' || content.type === ''" [ngStyle]="{'margin': '30px'}">
 
         <div class="content">
           <h2 >{{content.title}}</h2>
@@ -33,8 +33,15 @@
           <p appHoverAffect [ngClass]="{'tagHover': !isFirstCard && !isLastCard, 'firstCardTag': isFirstCard, 'lastCardTag': isLastCard}" *ngIf="content.tags && content.tags.length > 0"> Tag: {{content.tags}}</p>
       
         </div>
-      </div>
+      </div> -->
 
       
-      
+      <div class="content-card">
+        <h1>Content List</h1>
+        <div class="content-list">
+          <div *ngFor="let contentItem of contentList.content; let i = index">  
+            <div [innerHTML]="contentList.getContentHtml(i)"></div>
+          </div>
+        </div>
+      </div>
 

@@ -31,7 +31,7 @@
    </div> -->
 
 
-<h1 style="background-color: rgba(158, 203, 100, 0.755);">Here's cricketers content list !! </h1>
+<!-- <h1 style="background-color: rgba(158, 203, 100, 0.755);">Here's cricketers content list !! </h1>
 <div id="filter">
 <input [(ngModel)]="findTitle"><button (click)="findContent()">Search</button>
 <br>
@@ -58,3 +58,67 @@
 </app-content-card>
 </div>
 
+ -->
+
+ <!-- <div>
+  <label for="searchTitle">Search Title:</label>
+  <input type="text" id="searchTitle" [(ngModel)]="searchTitle">
+  <button (click)="searchContentItem()">Search</button>
+  <p [style.color]="isContentFound ? 'green' : 'red'">{{ searchResult }}</p>
+</div>
+
+<h3>Content with no type</h3>
+<div *ngFor="let contentItem of contentListArray | contentClear : ''; let isFirst = first; even as isEven" 
+     [style.border]="isFirst ? '2px solid black' : '1px solid black'"
+     [style.padding]="'10px'"
+     [style.margin]="'10px'"
+     [ngStyle]="{ 'color': contentItem.type === 'All rounder' ? 'green' : contentItem.type === 'Bowler' ? 'blue' : contentItem.type === '' ? 'pink' : contentItem.type === 'Stump' ? 'yellow' : 'grey' }">
+  <h2 class="content-card" [ngClass]="{ 'highlighted': isContentFound && contentItem.title === searchTitle }">{{ contentItem.title }}</h2>
+  <img *ngIf="contentItem.imgURL; else defaultImage" [src]="contentItem.imgURL" (click)="displayContent(contentItem)" height="700px" width="100%">
+  <p>{{ contentItem.description }}</p>
+  <p>{{ contentItem.creator }}</p>
+  <p *ngIf="contentItem.type" appHoverAffect [affectStyle]="'underline'" >{{ contentItem.type }}</p>
+  <ul *ngIf="contentItem.tags">
+    <li *ngFor="let tag of contentItem.tags" class="tag" appHoverAffect [affectStyle]="'bold'">{{ tag }}</li>
+  </ul>
+  <ng-template #defaultImage>
+    <img src="https://www.freepik.com/premium-photo/image-colorful-galaxy-sky-generative-ai_37741252.htm" width="100%" height="70%">
+  </ng-template>
+</div>
+
+
+<h3>Content with type All rounder</h3>
+<div *ngFor="let contentItem of contentListArray | contentClear : 'All rounder'; let isFirst = first; even as isEven" 
+     [style.border]="isFirst ? '3px solid black' : '1px solid black'"
+     [ngStyle]="{ 'color': contentItem.type === 'All rounder' ? 'green' : contentItem.type === 'Bowler' ? 'blue' : contentItem.type === '' ? 'white' : contentItem.type === 'Stump' ? 'yellow' : 'grey' }">
+     <h2 class="content-card" [ngClass]="{ 'highlighted': isContentFound && contentItem.title === searchTitle }">{{ contentItem.title }}</h2>
+  <img *ngIf="contentItem.imgURL; else defaultImage" [src]="contentItem.imgURL" (click)="displayContent(contentItem)" height="700px" width="100%">
+  <p>{{ contentItem.description }}</p>
+  <p>{{ contentItem.creator }}</p>
+  <p *ngIf="contentItem.type" appHoverAffect [affectStyle]="'underline'">{{ contentItem.type }}</p>
+  <ul *ngIf="contentItem.tags">
+    <li *ngFor="let tag of contentItem.tags" class="tag" appHoverAffect [affectStyle]="'bold'">{{ tag }}</li>
+  </ul>
+  <ng-template #defaultImage>
+    <img src="https://www.freepik.com/premium-photo/image-colorful-galaxy-sky-generative-ai_37741252.htm" width="100%" height="70%">
+  </ng-template>
+</div>
+
+<h3>Content with type Bowler</h3>
+<div *ngFor="let contentItem of contentListArray | contentClear : 'Bowler'; let isFirst = first;"
+     [style.border]="isFirst ? '2px solid black' : '1px solid black'"
+     
+     [ngStyle]="{ 'color': contentItem.type === 'All rounder' ? 'green' : contentItem.type === 'Bowler' ? 'blue' : contentItem.type === '' ? 'white' : contentItem.type === 'Stump' ? 'yellow' : 'grey' }">
+  <h2 class="content-card" [ngClass]="{ 'highlighted': isContentFound && contentItem.title === searchTitle }">{{ contentItem.title }}</h2>
+  <img *ngIf="contentItem.imgURL; else defaultImage" [src]="contentItem.imgURL" (click)="displayContent(contentItem)" height="700px" width="100%">
+  <p>{{ contentItem.description }}</p>
+  <p>{{ contentItem.creator }}</p>
+  <p *ngIf="contentItem.type" appHoverAffect [affectStyle]="'underline'">{{ contentItem.type }}</p>
+  <ul *ngIf="contentItem.tags">
+    <li *ngFor="let tag of contentItem.tags" class="tag" appHoverAffect [affectStyle]="'bold'">{{ tag }}</li>
+  </ul>
+  <ng-template #defaultImage>
+    <img src="https://www.freepik.com/premium-photo/image-colorful-galaxy-sky-generative-ai_37741252.htm" width="100%" height="70%">
+  </ng-template>
+</div>
+ -->
