@@ -20,7 +20,7 @@ export const contentListArray = [
   {
     id: 3,
     title: 'Bowler',
-    imgURL: 'assets/image/image-colorful.avif',
+    imgURL: 'assets/image/baby_groot.jpeg',
     
 
     description: 'the name of the first delivery of any innings in a cricket match from the bowler to the batsman,',

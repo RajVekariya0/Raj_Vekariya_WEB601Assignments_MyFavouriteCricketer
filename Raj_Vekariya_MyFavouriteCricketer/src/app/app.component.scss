@@ -1,32 +1,81 @@
-.topContent .c-card{
-    padding: 10px;
-    margin: 10px;
-    border: 1px solid black;
-    box-shadow: 0px 0px 10px 1px black;
-   
+.topContent .c-card {
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid #c6f1b3; /* Changed the border color to #3ad847 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
 }
+
+.topContent .c-card:hover {
+  transform: scale(1.05);
+}
+
 .topContent {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .c-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .center-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .button-container {
-    display: flex;
-    justify-content: center;
-  }
-  .cursor-pointer {
-    cursor: pointer;
-  }
-  
+  display: flex;
+  justify-content: center;
+}
+
+.c-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.content-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.content-container h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.content-container p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.content-container p.appHoverAffect {
+  text-decoration: underline;
+}
+
+.content-container p.appHoverAffect:hover {
+  color: rgb(27, 225, 43);
+}
+
+.content-container span {
+  font-weight: bold;
+}
+
+.content-container img {
+  max-height: 500px;
+  width: 100%;
+  object-fit: cover;
+  border: 1px solid #3ad847; /* Changed the image border color to #3ad847 */
+  border-radius: 4px;
+}
+
+.zoom-in-out {
+  transition: transform 1s ease;
+}
+
+.zoom-in-out:hover {
+  transform: scale(0.9); /* Zoom in effect on image hover */
+}
