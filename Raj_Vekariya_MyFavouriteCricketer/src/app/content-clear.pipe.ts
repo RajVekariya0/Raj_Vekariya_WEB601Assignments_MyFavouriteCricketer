@@ -1,5 +1,4 @@
-import { Input, Pipe, PipeTransform } from '@angular/core';
-import { Content } from './helper-files/ content-interface';
+import {  Pipe, PipeTransform } from '@angular/core';
 
 
 @Pipe({
@@ -7,11 +6,13 @@ import { Content } from './helper-files/ content-interface';
 })
 export class ContentClearPipe implements PipeTransform  {
 
-  transform(contentItemsArray: Content[], type: string) {
-    
-    return  contentItemsArray.filter(c => c.type === type ) ;
- 
-}
+  transform(contentList: any[], type: string = ''): any[] {
+    if (type === '') {
+      return contentList;
+    } else {
+      return contentList.filter(item => item.type === type);
+    }
+  }
   
 }
 

@@ -67,7 +67,7 @@ export const contentListArray = [
     tags: ['Gujju', 'rock']
   },
   {
-    id: 7,
+    id: 8,
     title: 'Bowler',
     imgURL: 'assets/image/Bhuvneshwar.jpeg',
     description: 'One of the simplest new ball bowlers within the world currently',
