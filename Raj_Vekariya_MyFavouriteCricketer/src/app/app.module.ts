@@ -13,6 +13,15 @@ import { MessageService } from './services/messages.service';
 import { HttpClientModule } from '@angular/common/http';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { AddContentDialogComponent } from './add-content-dialog/add-content-dialog.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -23,7 +32,8 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
     ContentClearPipe, // Add this line
     HoverAffectDirective, 
     AppMessagesComponent, 
-    ModifyContentComponentComponent,
+    ModifyContentComponentComponent, 
+    AddContentDialogComponent,
     
   ],
   imports: [
@@ -31,11 +41,18 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    MatDialogModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule,
+    MatTooltipModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
       delay: 1000,
     }),
-    
+    BrowserAnimationsModule
+
   ],
   providers: [MessageService],
   bootstrap: [AppComponent],

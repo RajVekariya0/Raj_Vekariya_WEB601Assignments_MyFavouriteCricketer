@@ -29,4 +29,6 @@ export class AppComponent implements OnInit {
       console.log('singleContentItem click',this.singleContentItem);
     });
   }
+
+  
 }
