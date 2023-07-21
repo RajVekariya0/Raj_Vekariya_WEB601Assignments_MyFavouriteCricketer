@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { AddContentDialogComponent } from '../add-content-dialog/add-content-dialog.component';
 
 
 
@@ -7,10 +9,12 @@ import { Component } from '@angular/core';
   templateUrl:'./content-card.component.html',
   styleUrls: ['./content-card.component.scss']
 })
-export class ContentCardComponent {
+export class ContentCardComponent implements OnInit {
   contentList: any = [];
 
-  constructor() {
+  constructor(private dialog: MatDialog) {}
+
+  ngOnInit() {
     this.contentList.add ({
       id: 1,
       title: 'Captian',
@@ -43,4 +47,22 @@ export class ContentCardComponent {
     });
 
     }
+    openUpdateContentDialog(contentItem: any): void {
+      const dialogRef = this.dialog.open(AddContentDialogComponent, {
+        data: {
+          contentType: 'Content',
+          contentItem: contentItem
+        }
+      });
+  
+      dialogRef.afterClosed().subscribe((result: any) => {
+        if (result) {
+          // Handle the content update logic here
+          console.log(result); // You can check the result in the console
+          // Implement the logic to update the content item on the server or wherever it's stored
+          // Display a success message using the message service
+        }
+      });
+    }
+  
   }
