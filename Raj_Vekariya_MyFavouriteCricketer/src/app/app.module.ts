@@ -33,8 +33,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     HoverAffectDirective, 
     AppMessagesComponent, 
     ModifyContentComponentComponent, 
-    AddContentDialogComponent,
-    
+    AddContentDialogComponent, 
   ],
   imports: [
     BrowserModule,

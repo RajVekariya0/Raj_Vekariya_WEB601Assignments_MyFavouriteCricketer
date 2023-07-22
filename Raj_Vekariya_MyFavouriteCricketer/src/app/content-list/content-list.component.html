@@ -125,3 +125,16 @@
   </ng-template>
 </div>
   -->
+
+  <div *ngFor="let contentItem of contentListArray">
+    <!-- Display content item information here -->
+    <h3>{{ contentItem.title }}</h3>
+    <p>{{ contentItem.description }}</p>
+    <p>Creator: {{ contentItem.creator }}</p>
+    <p>Type: {{ contentItem.type }}</p>
+  
+    <!-- Add a link to the content detail page -->
+    <a [routerLink]="['/detail', contentItem.id]">View Details</a>
+  </div>
+  
+  
